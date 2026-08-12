@@ -1,0 +1,21 @@
+import java.util.Arrays;
+
+public class replace_duplicacy {
+    public static void main(String[] args) {
+        int[] ar = {1, 2, 2, 3, 3, 4, 4, 5};
+
+        if (ar.length == 0) return;
+
+        int i = 0;
+
+        for (int j = 1; j < ar.length; j++) {
+            if (ar[j] != ar[i]) {
+                i++;
+                ar[i] = ar[j];
+            }
+        }
+
+        int[] uniqueAr = Arrays.copyOf(ar, i + 1);
+        System.out.println(Arrays.toString(uniqueAr));
+    }
+}
